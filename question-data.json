@@ -1,0 +1,51 @@
+[{
+    "id": "1",
+    "key":"name",
+    "question": "What is your full name?",
+    "type": "text",
+    "required": "yes"
+},
+{   "id": "2",
+    "key":"age",
+    "question": "What is your age range?",
+    "type": "select",
+    "options": ["0-9","10-19","20-29","30-39","40-49","50-59","60-69","70-79","80-89","90-99"],
+    "required": "yes"
+},
+{
+    "id":"3",
+    "key":"work",
+    "question": "Explain your work experience briefly.",
+    "type": "multiline",
+    "required": "yes"
+},
+{
+    "id":"4",
+    "key":"location",
+    "question": "Do you live in Toronto?",
+    "type": "radio",
+    "options": ["Yes","No"],
+    "required": "no" 
+},
+{
+    "id":"5",
+    "key":"industry",
+    "question": "Which of the following industries have you worked in? Select all that apply.",
+    "type": "checkbox",
+    "options": ["Accounting","Aerospace","Finance","Government","Healthcare","Oil-Gas","Pharmaceuticals"],
+    "required": "no"
+},
+{
+    "id": "6",
+    "key":"feedback",
+    "question":"Did you like the questionnaire?",
+    "type":"switch",
+    "required": "no"
+},
+{
+    "id":"7",
+    "key":"rating",
+    "question": "Please rate us",
+    "type": "rating",
+    "required": "no"
+}]
