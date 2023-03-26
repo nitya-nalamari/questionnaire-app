@@ -12,6 +12,8 @@ The input types supported are in the components folder.
 
 On submit a post request is sent to a mock "submit" api.
 
+Added a few unit test cases for components
+
 Assumptions:
 - The id for each question object in the question-data.json file HAS to be incremental.
 - Random ids are not supported. The application will not work as the consective numbers are used to increment and decrement the page id.
@@ -19,6 +21,3 @@ Assumptions:
 
 Extras:
 - A summary page is shown with all the selected answers for review before submit.
-
-Incomplete:
-- Unit test cases are incomplete as the jest/babel plugin was causing multitude of issues. Skipped for now
