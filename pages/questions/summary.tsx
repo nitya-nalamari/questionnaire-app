@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from 'next/router';
 
-import { Button, Card, CardHeader, CardActions, Typography, CardContent } from "@mui/material";
+import { Button, Card, CardHeader, CardActions, Typography, CardContent, Alert, Snackbar } from "@mui/material";
 
 import questionData from "../../question-data.json";
 import Layout from "../../src/components/layout";
@@ -9,6 +9,7 @@ import Layout from "../../src/components/layout";
 export default function Summary(){
 
     const router = useRouter();
+    const [open, setOpen] = React.useState(false);
 
     const dataToSubmit = questionData.map(record => {
          return {...record, "answers": localStorage ? localStorage.getItem(record.key) : ""}
@@ -21,9 +22,12 @@ export default function Summary(){
             headers: {"content-type":"application/json"},
         }).then((result) => {
             console.log(result);
-            router.push("/");
+            setOpen(true);
+            setTimeout(() => {
+                router.push(`/`);
+            }, 3000);
         }).catch(error => console.log("Unable to submit data: ", error))
-
+        
     }
 
     const answers = questionData.map((record, index)=> {
@@ -51,5 +55,10 @@ export default function Summary(){
             <Button onClick={handleSubmit}>Submit</Button>
         </CardActions>
         </Card>
+        <Snackbar open={open} autoHideDuration={2000} anchorOrigin={{vertical: "top",horizontal:"center"}}>
+            <Alert severity="success" sx={{ width: '100%' }}>
+                Information submitted successfully!
+            </Alert>
+        </Snackbar>
     </Layout>;
 }

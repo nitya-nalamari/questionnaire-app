@@ -13,12 +13,12 @@ export default function MultilineTextInput(props) {
     },[value])
     return (
     <>
-        <InputLabel> Briefly {required ? "*" : ""}</InputLabel>
+        <InputLabel data-testid="multiline-label"> Briefly {required ? "*" : ""}</InputLabel>
         <TextField multiline sx={{width:550}} onChange={(event) => {if(event.target.value === "") {
                         setValue(event.target.value); props.setDisabled(true);
                         } else {
                             setValue(event.target.value); props.setDisabled(false)}
-                    }} value={value}></TextField>
-        {required ? <FormHelperText>Required</FormHelperText> : <></>}
+                    }} value={value || ""}></TextField>
+        {required ? <FormHelperText data-testid="helper-text">Required</FormHelperText> : <></>}
     </>);
 }

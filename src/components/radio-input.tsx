@@ -8,7 +8,6 @@ export default function RadioInput(props){
     const required = props.currentQuestionOptions["required"] === "yes" ? true : false;
 
     React.useEffect(() => {
-        if(required && value == null) props.setDisabled(true);
         localStorage.setItem(key, value);
     },[value]);
 
@@ -28,7 +27,7 @@ export default function RadioInput(props){
                 }}>
                 {radioOptions}
             </RadioGroup>
-            {required ? <FormHelperText>Required</FormHelperText> : <></>}
+            {required ? <FormHelperText data-testid="helper-text">Required</FormHelperText> : <></>}
         </>
     );
 }

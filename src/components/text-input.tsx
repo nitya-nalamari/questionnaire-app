@@ -15,11 +15,11 @@ export default function TextInput(props) {
     
     return (
      <>
-        <InputLabel test-id="name-label"> Name {required ? "*" : ""}</InputLabel>
-        <TextField test-id="text-input" size="small" onChange={(event)=>{ 
+        <InputLabel data-testid="name-label"> Name {required ? "*" : ""}</InputLabel>
+        <TextField data-testid="text-input" size="small" onChange={(event)=>{ 
             if(event.target.value === ""){setName(event.target.value); props.setDisabled(true)} 
-            else {setName(event.target.value); props.setDisabled(false)}}} value={name}></TextField>
-        {required ? <FormHelperText test-id="helper-text">Required</FormHelperText> : <></>}
+            else {setName(event.target.value); props.setDisabled(false)}}} value={name || ""}></TextField>
+        {required ? <FormHelperText data-testid="helper-text">Required</FormHelperText> : <></>}
      </>
     )
     

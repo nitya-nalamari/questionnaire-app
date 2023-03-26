@@ -10,7 +10,6 @@ export default function SwitchInput(props){
     const required = props.currentQuestionOptions["required"] === "yes" ? true : false;
 
     React.useEffect(() => {
-        if(required && checked == null) props.setDisabled(true);
         localStorage.setItem(key, JSON.stringify(checked));
     },[checked]);
 
@@ -21,6 +20,6 @@ export default function SwitchInput(props){
                 <Switch id="switch-input" checked={checked} onChange={(event) => {setChecked(event.target.checked)}} />
             <Typography id="yes">Yes</Typography>
         </Stack>
-        {required ? <FormHelperText>Required</FormHelperText> : <></>}
+        {required ? <FormHelperText data-testid="helper-text">Required</FormHelperText> : <></>}
     </>);
 }

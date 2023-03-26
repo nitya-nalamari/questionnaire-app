@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import styles from './layout.module.css'
-import Link from 'next/link'
 
 export const siteTitle = 'Welcome to the questionnaire app'
 

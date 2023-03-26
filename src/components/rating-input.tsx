@@ -9,7 +9,6 @@ export default function RatingInput(props){
   const required = props.currentQuestionOptions["required"] === "yes" ? true : false;
 
   React.useEffect(() => {
-    if(required && value == null) props.setDisabled(true);
     localStorage.setItem(key, JSON.stringify(value));
   },[value]);
 
@@ -29,6 +28,6 @@ export default function RatingInput(props){
         }}
         precision={0.5}
         />
-      {required ? <FormHelperText>Required</FormHelperText> : <></>}
+      {required ? <FormHelperText data-testid="helper-text">Required</FormHelperText> : <></>}
     </>);
 }

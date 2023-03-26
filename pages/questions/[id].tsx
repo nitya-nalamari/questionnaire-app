@@ -67,8 +67,8 @@ export default function Question(){
             <CardHeader title={currentQuestion && currentQuestion.question} />
             <CardContent>{currentQuestion && getInputType(currentQuestion)}</CardContent>
             <CardActions>            
-                <Button onClick={getPreviousRoute}>Back</Button>
-                <Button onClick={getNextRoute} disabled={disabled}>Next</Button>
+                <Button data-testid="back-button" onClick={getPreviousRoute}>Back</Button>
+                <Button data-testid="next-button" onClick={getNextRoute} disabled={disabled}>Next</Button>
                 </CardActions>
             </Card>
         </Layout>
